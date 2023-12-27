@@ -1,0 +1,45 @@
+.bgcolor {
+  background-color: #e4f1ff;
+}
+.navbarbg {
+  background-color: #814ccb;
+  color: white;
+}
+.boxbg {
+  background-color: #40acc7;
+}
+.box {
+  height: 90vh;
+}
+.main-container {
+  min-height: 80vh;
+}
+.mybtn {
+  border: none;
+  border-radius: 10px;
+  background-color: #814ccb;
+  border-color: #814ccb;
+}
+.mybtn:hover {
+  background-color: #6020b8;
+}
+.nav-a {
+  width: 3vw;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.nav-a:hover {
+  width: 3vw;
+  background-color: #7114af;
+  border-radius: 10px;
+  transition-delay: 0.1s;
+  transition: 0.3s;
+}
+.mytable{
+    border-radius: 10px;
+    background-color: #4fbfdb;
+}
+/* form{
+    background-color: #4fbfdb;
+} */
