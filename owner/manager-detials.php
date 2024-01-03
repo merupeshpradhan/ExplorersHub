@@ -37,28 +37,44 @@
                     if ($res->num_rows > 0) {
                         $mng = $res->fetch_assoc();
                         // print_r($mng);
-
-                    ?>
+                    
+                        ?>
                         <tr>
-                            <td><?php echo $mng['id'] ?></td>
-                            <td><?php echo $mng['name'] ?></td>
-                            <td><?php echo $mng['gender'] ?></td>
-                            <td><?php echo $mng['dob'] ?></td>
-                            <td><?php echo $mng['address'] ?></td>
-                            <td><?php echo $mng['mobile'] ?></td>
-                            <td><?php echo $mng['email'] ?></td>
-                            <td><?php echo $mng['position'] ?></td>
+                            <td>
+                                <?php echo $mng['id'] ?>
+                            </td>
+                            <td>
+                                <?php echo $mng['name'] ?>
+                            </td>
+                            <td>
+                                <?php echo $mng['gender'] ?>
+                            </td>
+                            <td>
+                                <?php echo $mng['dob'] ?>
+                            </td>
+                            <td>
+                                <?php echo $mng['address'] ?>
+                            </td>
+                            <td>
+                                <?php echo $mng['mobile'] ?>
+                            </td>
+                            <td>
+                                <?php echo $mng['email'] ?>
+                            </td>
+                            <td>
+                                <?php echo $mng['position'] ?>
+                            </td>
                         </tr>
-                </table>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-<?php
+        <?php
                     } else {
                         echo "No Record Found";
                     }
                     $conn->close();
-?>
+                    ?>
 </body>
 
 </html>
