@@ -42,7 +42,7 @@
 
                     while ($loc = $res1->fetch_assoc()) {
                     ?>
-                        <div class="mb-3 col-lg-7 card fw-bold" style="max-width: 550px; border: 2px solid #5a5add; background-color: #8aafd6; font-family: 'Courier New', Courier, monospace;">
+                        <div class="mb-3 col-lg-7 card fw-bold" style="max-width: 550px; border: 2px solid #5a5add; background-color: #ac84e35c; font-family: 'Courier New', Courier, monospace;">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="../images/jagarnath.jpeg" class="img-fluid" id="locImg" alt="location">

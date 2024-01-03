@@ -7,7 +7,7 @@
     <title>Add Location</title>
 </head>
 
-<body>
+<body style="background-color: #ac84e35c;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
     <?php
     include_once "Navbar.php";
     if (isset($_POST['add'])) {

@@ -19,10 +19,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item "><a class="nav-link text-white" href="managment-Home.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Location.php">Location's</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="New-agency.php">Agency Request's</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="mngmLogin.php">Login</a></li>
+                    <li class="nav-item  fs-5"><a class="nav-link text-white" href="managment-Home.php">Home</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="Location.php">Location's</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="New-agency.php">Agency Request's</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="mngmLogin.php">Login</a></li>
                 </ul>
             </div>
         </div>

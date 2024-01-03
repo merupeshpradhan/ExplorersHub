@@ -18,11 +18,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link text-white" href="Owner-Home.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Add-manager.php">Add Manager</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Growth.php">Growth</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Owner-login.php">Login</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Owner-register.php">Register</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="Owner-Home.php">Home</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="Add-manager.php">Add Manager</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="Growth.php">Growth</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="Owner-login.php">Login</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="Owner-register.php">Register</a></li>
                 </ul>
             </div>
         </div>

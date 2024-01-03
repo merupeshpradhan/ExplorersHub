@@ -24,7 +24,7 @@
         }
 
         .main-container {
-            min-height: 60vh;
+            min-height: 120vh;
         }
 
         .table-container {
@@ -35,10 +35,9 @@
             border: 1px solid #327a81;
             border-radius: 10px;
             box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-            max-width: calc(100% - 2em);
-            margin: 1em auto;
+            /* margin: 1em auto; */
             overflow: hidden;
-            width: 800px;
+            width: 95vw;
         }
 
         table {
@@ -48,7 +47,8 @@
         table td,
         table th {
             color: #2b686e;
-            padding: 10px;
+            padding-bottom: 10px;
+            padding-top: 10px;
         }
 
         table td {
@@ -58,8 +58,7 @@
 
         table td:last-child {
             font-size: 0.95em;
-            line-height: 1.4;
-            text-align: left;
+            line-height: 2.4;
         }
 
         table th {
@@ -98,7 +97,7 @@
             td:not(:first-child) {
                 clear: both;
                 margin-left: 55px;
-                padding: 4px 20px 4px 90px;
+                padding: 4px 20px 4px 115px;
                 position: relative;
             }
 
@@ -111,31 +110,32 @@
             }
 
             td:nth-child(2):before {
-                content: "Loc Name:";
+                content: "Agency Name:";
             }
 
             td:nth-child(3):before {
-                content: "Street:";
+                content: "Location :";
             }
 
             td:nth-child(4):before {
-                content: "District:";
+                content: "Street:";
             }
 
             td:nth-child(5):before {
-                content: "Pincode:";
+                content: "District:";
             }
 
             td:nth-child(6):before {
-                content: "Location Price:";
+                content: "State:";
             }
-
             td:nth-child(7):before {
-                content: "Location AVL:";
+                content: "Pincode:";
             }
-
             td:nth-child(8):before {
-                content: "Modification";
+                content: "LOC Price:";
+            }
+            td:nth-child(9):before {
+                content: "Action:";
             }
 
             table td:last-child {
@@ -161,7 +161,7 @@
     </style>
 </head>
 
-<body>
+<body style="background-color: #ac84e35c;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
     <?php
     include_once "Navbar.php";
     ?>
@@ -169,24 +169,74 @@
         <div class="containers">
             <div class="table-container">
                 <div class="mx-auto">
-                    <div class="">
+                    <div class="table-users">
                         <table cellspacing="0">
                             <!-- <?php
                                     require_once "db-connect.php";
+                                    $qry = "SELECT * FROM agency_lists";
+                                    $res = $conn->query($qry);
+                                    ?> -->
+                            <div class="header">All Agency</div>
+                            <tr>
+                            <th class="text-center">SL NO.</th>
+                                <th class="text-center">AGENCY NAME</th>
+                                <th class="text-center">OWNER NAME</th>
+                                <th class="text-center">PHONE</th>
+                                <th class="text-center">EMAIL</th>
+                                <th class="text-center">LOCATION NAME</th>
+                                <th class="text-center">STATE</th>
+                                <th class="text-center">LOCATION PRICE</th>
+                                <th class="text-center">ACTION</th>
+                            </tr>
+                            <?php
+                            $i = 1;
+                            while ($loc = $res->fetch_assoc()) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $i ?></td>
+                                    <td><?php echo $loc['agencyName']; ?></td>
+                                    <td><?php echo $loc['ownerName']; ?></td>
+                                    <td><?php echo $loc['phone']; ?></td>
+                                    <td><?php echo $loc['email']; ?></td>
+                                    <td><?php echo $loc['location']; ?></td>
+                                    <td><?php echo $loc['state']; ?></td>
+                                    <td><?php echo $loc['price']; ?></td>
+                                    <td>
+                                        <a href="locationUpdate.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Accept</a>
+                                        <a href="delete-detials.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-danger p-1">Cancel</a>
+                                    </td>
+                                </tr>
+                            <?php
+                                $i++;
+                            }
+                            ?>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex main-container justify-content-center">
+        <div class="containers">
+            <div class="table-container">
+                <div class="mx-auto">
+                    <div class="table-users">
+                        <table cellspacing="0">
+                            <!-- <?php
                                     $qry = "SELECT * FROM agency_application";
                                     $res = $conn->query($qry);
                                     ?> -->
                             <div class="header">Request</div>
                             <tr>
-                                <th>REQUEST ID</th>
-                                <th>AGENCY NAME</th>
-                                <th>LOCATION NAME</th>
-                                <th>STREET</th>
-                                <th>DISTRICT</th>
-                                <th>STATE</th>
-                                <th>PINCODE</th>
-                                <th>LOCATION PRICE</th>
-                                <th>ACTION</th>
+                                <th class="text-center">REQUEST ID</th>
+                                <th class="text-center">AGENCY NAME</th>
+                                <th class="text-center">LOCATION NAME</th>
+                                <th class="text-center">STREET</th>
+                                <th class="text-center">DISTRICT</th>
+                                <th class="text-center">STATE</th>
+                                <th class="text-center">PINCODE</th>
+                                <th class="text-center">LOCATION PRICE</th>
+                                <th class="text-center">ACTION</th>
                             </tr>
                             <?php
                             $i = 1;
@@ -220,7 +270,7 @@
         <div class="containers">
             <div class="table-container">
                 <div class="mx-auto">
-                    <div class="">
+                    <div class="table-users">
                         <table cellspacing="0">
                             <!-- <?php
                                     $qry = "SELECT * FROM agency_application";
@@ -228,65 +278,15 @@
                                     ?> -->
                             <div class="header">Request</div>
                             <tr>
-                                <th>REQUEST ID</th>
-                                <th>AGENCY NAME</th>
-                                <th>LOCATION NAME</th>
-                                <th>STREET</th>
-                                <th>DISTRICT</th>
-                                <th>STATE</th>
-                                <th>PINCODE</th>
-                                <th>LOCATION PRICE</th>
-                                <th>ACTION</th>
-                            </tr>
-                            <?php
-                            $i = 1;
-                            while ($loc = $res->fetch_assoc()) {
-                            ?>
-                                <tr>
-                                    <td><?php echo $i ?></td>
-                                    <td><?php echo $loc['agencyName']; ?></td>
-                                    <td><?php echo $loc['location']; ?></td>
-                                    <td><?php echo $loc['street']; ?></td>
-                                    <td><?php echo $loc['district']; ?></td>
-                                    <td><?php echo $loc['state']; ?></td>
-                                    <td><?php echo $loc['pincode']; ?></td>
-                                    <td><?php echo $loc['price']; ?></td>
-                                    <td>
-                                        <a href="locationUpdate.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Accept</a>
-                                        <a href="delete-detials.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-danger p-1">Cancel</a>
-                                    </td>
-                                </tr>
-                            <?php
-                                $i++;
-                            }
-                            ?>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex main-container justify-content-center">
-        <div class="containers">
-            <div class="table-container">
-                <div class="mx-auto">
-                    <div class="">
-                        <table cellspacing="0">
-                            <!-- <?php
-                                    $qry = "SELECT * FROM agency_application";
-                                    $res = $conn->query($qry);
-                                    ?> -->
-                            <div class="header">Request</div>
-                            <tr>
-                                <th>REQUEST ID</th>
-                                <th>AGENCY NAME</th>
-                                <th>LOCATION NAME</th>
-                                <th>STREET</th>
-                                <th>DISTRICT</th>
-                                <th>STATE</th>
-                                <th>PINCODE</th>
-                                <th>LOCATION PRICE</th>
-                                <th>ACTION</th>
+                                <th class="text-center">REQUEST ID</th>
+                                <th class="text-center">AGENCY NAME</th>
+                                <th class="text-center">LOCATION NAME</th>
+                                <th class="text-center">STREET</th>
+                                <th class="text-center">DISTRICT</th>
+                                <th class="text-center">STATE</th>
+                                <th class="text-center">PINCODE</th>
+                                <th class="text-center">LOCATION PRICE</th>
+                                <th class="text-center">ACTION</th>
                             </tr>
                             <?php
                             $i = 1;
