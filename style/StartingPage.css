@@ -41,6 +41,10 @@ nav {
   border: 1px solid #814ccb;
 }
 
+.information{
+  margin-top: 50px;
+}
+
 /* Login And register  AND col 2 */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
@@ -53,6 +57,7 @@ nav {
 }
 
 .boxs {
+  color: white;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -60,10 +65,10 @@ nav {
   height: 532px;
   width: 350px;
   border-radius: 30px;
-  background-color: rgba(102, 126, 220, 0.406);
+  background-color: rgba(9, 56, 98, 0.3); 
   -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  border: 3px solid rgba(18, 77, 178, 0.2);
+  backdrop-filter: blur(5px);
+  border: 3px solid #8f60d2;
   overflow: hidden;
 }
 .box-logins {
@@ -98,11 +103,11 @@ nav {
   width: 100%;
   height: 50px;
   font-size: 15px;
-  color: #040404;
+  color: white;
   border: none;
   border-radius: 10px;
   padding: 7px 45px 0 20px;
-  background: rgba(10, 197, 222, 0.6);
+  background: #a27dde;
   backdrop-filter: blur(2px);
   outline: none;
 }
@@ -117,7 +122,7 @@ nav {
 .input-boxs:valid ~ label {
   top: 2px;
   font-size: 10px;
-  color: #c12884;
+  color: white;
   font-weight: 500;
 }
 .remembers {
@@ -137,14 +142,14 @@ nav {
   font-weight: 500;
   border: none;
   border-radius: 10px;
-  background: #0281bc;
+  background: #5a5add;
   color: #fff;
   box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.144);
   cursor: pointer;
   transition: 0.4s;
 }
 .input-submit:hover {
-  background: #357bb0;
+  background: #4848a9;
   box-shadow: 0px 4px 20px rgba(9, 30, 62, 0.32);
 }
 .forgot {
@@ -155,7 +160,7 @@ nav {
 }
 .forgot a {
   text-decoration: none;
-  color: #000;
+  color:white;
 }
 .switch {
   display: flex;
@@ -171,12 +176,13 @@ nav {
   overflow: hidden;
 }
 .switch a {
+  
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
   font-weight: 500;
-  color: #000;
+  color: #ffffff;
   text-decoration: none;
   width: 50%;
   height: 50px;
@@ -198,6 +204,7 @@ nav {
   position: absolute;
   top: 25px;
   right: 25px;
+  /* background: #8aafd6; */
 }
 .eye-box {
   display: flex;
@@ -207,7 +214,7 @@ nav {
 }
 i {
   position: absolute;
-  color: #444444;
+  color: #ffffff;
   cursor: pointer;
 }
 #eye,
@@ -219,6 +226,7 @@ i {
   opacity: 0;
 }
 @media only screen and (max-width: 576px) {
+
   .box {
     margin: 0 5px;
   }

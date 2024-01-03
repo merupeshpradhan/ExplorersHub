@@ -21,7 +21,8 @@
     height: 532px;
     width: 350px;
     border-radius: 30px;
-    background-color: rgba(102, 126, 220, 0.406);
+    /* background-color: rgba(102, 126, 220, 0.406); */
+    background-color: brown;
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     border: 3px solid rgba(18, 77, 178, 0.2);

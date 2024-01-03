@@ -8,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAD</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
 
     <style>
         body {
@@ -220,7 +219,7 @@
                     <th class="text-right">Actions</th>
                 </tr>
                 <?php while ($row = $res->fetch_assoc()) {
-                    ?>
+                ?>
                     <tr>
                         <td>
                             <?php echo $row['id']; ?>
@@ -238,17 +237,15 @@
                             <?php echo $row['price']; ?>
                         </td>
                         <td class="td-actions text-right">
-                            <button type="button" name="accept_order" rel="tooltip"
-                                class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                            <button type="button" name="accept_order" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
                                 <i class="material-icons">check</i>
                             </button>
-                            <button type="button" name="reject_order" rel="tooltip"
-                                class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                            <button type="button" name="reject_order" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
                                 <i class="material-icons">close</i>
                             </button>
                         </td>
                     </tr>
-                    <?php
+                <?php
                 }
                 ?>
             </table>
