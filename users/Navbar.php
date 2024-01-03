@@ -18,13 +18,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item "><a class="nav-link text-white" href="managment-Home.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="CustemerReq.php">Custemer Request</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Location.php">Location's</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Charges.php">Charges</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="New-agency.php">New Agency Request</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Agency-register.php">Agency Registration</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="mngmLogin.php">Login</a></li>
+                    <li class="nav-item "><a class="nav-link text-white" id="nav" href="user-home.php">Home</a></li>
+                    <li class="nav-item "><a class="nav-link text-white" id="nav" href="booking.php">Booking</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link text-white" href="CustemerReq.php">Custemer Request</a></li> -->
+                    <!-- <li class="nav-item"><a class="nav-link text-white" href="Location.php">Location's</a></li> -->
+                    <!-- <li class="nav-item"><a class="nav-link text-white" href="Charges.php">Charges</a></li> -->
+                    <!-- <li class="nav-item"><a class="nav-link text-white" href="New-agency.php">New Agency Request</a></li> -->
+                    <!-- <li class="nav-item"><a class="nav-link text-white" href="Agency-register.php">Agency Registration</a></li> -->
+                    <!-- <li class="nav-item"><a class="nav-link text-white" href="mngmLogin.php">Login</a></li> -->
                 </ul>
             </div>
         </div>

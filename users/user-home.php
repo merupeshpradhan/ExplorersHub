@@ -67,8 +67,8 @@
                                 <h2 class="card-title"><?php echo $loc['name']; ?></h2>
                                 <p class="card-text">Location : <?php echo $loc['state']; ?></p>
                                 <p class="card-text">Price : <?php echo $loc['price']; ?></p>
-                                <button><a href="">Book Now</a></button>
-                                <button><a href="">Detials</a></button>
+                                <a href="Add-booking.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Book Now</a>
+                                <a href="locationUpdate.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Detials</a>
                             </div>
                         </div>
                     </div>
