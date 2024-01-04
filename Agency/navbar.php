@@ -11,35 +11,40 @@
             background: linear-gradient(135deg, #71b7e6, #9b59b6);
         }
     </style>
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body>
-    <?php
-    if (isset($_SESSION['message'])) {
-        echo '<div class="alert alert-success">' . $_SESSION['message'] . '</div>';
-        unset($_SESSION['message']);
-    }
-    ?>
+    <!-- <?php
+    // if (isset($_SESSION['message'])) {
+    //     echo '<div class="alert alert-success">' . $_SESSION['message'] . '</div>';
+    //     unset($_SESSION['message']);
+    // }
+    ?> -->
 
     <body class="text-white mt-0" id="bg" data-bs-spy="scroll" data-bs-target="#navScroll">
 
-        <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
-            <div class="container">
-                <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-                    <span class="ms-md-1 mt-1 fw-bolder me-md-5">Explorers HUB</span>
-                </a>
+        <nav class="navbar navbar-expand-lg navbarbg" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Explorers HUB</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <?php if (isset($_SESSION['loggedInStatus'])): ?>
-                    <a href="index.php" class="btn btn-primary">Home Page</a>
-                    <a href="dashboard.php" class="btn btn-secondary">Dashboard</a>
-                    <a href="availlocation.php" class="btn btn-secondary">Check Availability</a>
-                    <a href="logout.php" class="btn btn-danger">Logout</a>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link text-white" href="index.php">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="dashboard.php">Dashboard</a></li>
+                            <li><a class="nav-link text-white" href="logout.php">Logout</a></li>
+                        </ul>
+                    </div>
 
                 <?php else: ?>
 
-                    <a href="login.php" class="btn btn-primary">Login</a>
-                    <a href="register.php" class="btn btn-info">Register</a>
-
+                    <a class="nav-link text-white fs-4" href="loginRegister.php">Login</a>
                 <?php endif; ?>
             </div>
         </nav>
