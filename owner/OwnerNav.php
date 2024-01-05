@@ -7,6 +7,34 @@
     <title>Navbar</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style/style.css">
+    <style>
+        .profile-popup {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            width: 40%;
+            display: none;
+            position: fixed;
+            top: 21%;
+            left: 65%;
+            transform: translate(-60%, -48%);
+            padding: 20px;
+            background-color: #f1e8ff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgb(0 0 255 / 30%);
+            z-index: 1000;
+        }
+
+        :target {
+            display: block;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,15 +46,29 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link text-white" href="Owner-Home.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Add-manager.php">Add Manager</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Growth.php">Growth</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Owner-login.php">Login</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="Owner-register.php">Register</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="Owner-Home.php">Home</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="Add-manager.php">Add Manager</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="Owner-register.php">Register</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="#profilePopup">Profile</a></li>
+                    <li class="nav-item fs-5"><a class="nav-link text-white" href="logout.php">Log out</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <div id="profilePopup" class="profile-popup">
+        <span class="close-btn"><a href="#"><i class="bi bi-x-circle"></i></a></span>
+        <h2>User Profile</h2>
+        <?php
+        // PHP code to fetch user details from the server/database
+        $username = "John Doe";
+        $email = "john@example.com";
+
+        echo "<p>Name: $username</p>";
+        echo "<p>Email: $email</p>";
+        // Add more user details as needed
+        ?>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

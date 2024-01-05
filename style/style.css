@@ -9,7 +9,7 @@
   background-color: #40acc7;
 }
 .box {
-  height: 90vh;
+  min-height: 90vh;
 }
 .main-container {
   min-height: 80vh;

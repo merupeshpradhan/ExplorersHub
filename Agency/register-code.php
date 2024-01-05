@@ -33,7 +33,7 @@ if(isset($_POST['registerBtn']))
 
     if(count($errors) > 0){
         $_SESSION['errors'] = $errors;
-        header('Location: loginRegister.php');
+        header('Location: register.php');
         exit();
     }
 
@@ -46,7 +46,7 @@ if(isset($_POST['registerBtn']))
         exit();
     }else{
         $_SESSION['message'] = "Something Went Wrong";
-        header('Location: loginRegister.php');
+        header('Location: register.php');
         exit();
     }
 

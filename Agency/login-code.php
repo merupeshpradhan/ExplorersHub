@@ -21,7 +21,7 @@ if(isset($_POST['loginBtn']))
     if(count($errors) > 0)
     {
         $_SESSION['errors'] = $errors;
-        header('Location: loginRegister.php');
+        header('Location: login.php');
         exit();
     }
 
@@ -42,14 +42,14 @@ if(isset($_POST['loginBtn']))
             array_push($errors, "Invalid Email or Password!");
             $_SESSION['errors'] = $errors;
 
-            header('Location: loginRegister.php');
+            header('Location: login.php');
             exit();
         }
     }else{
         array_push($errors, "Something Went Wrong!");
         $_SESSION['errors'] = $errors;
 
-        header('Location: loginRegister.php');
+        header('Location: login.php');
         exit();
     }
 

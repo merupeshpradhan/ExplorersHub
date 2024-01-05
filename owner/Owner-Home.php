@@ -18,7 +18,6 @@
             background-color: #d2b2ff;
             color: white;
             font-size: 1.5em;
-            /* padding: 1rem; */
             text-align: center;
             text-transform: uppercase;
         }
@@ -151,7 +150,7 @@
     </style>
 </head>
 
-<body>
+<body style="background-color: #ac84e35c;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
     <?php
     include_once "OwnerNav.php";
     ?>
@@ -199,36 +198,23 @@
                                 <th class="text-center">Action</th>
                             </tr>
                             <?php
-                            $i = 1;
+                            $i=1;
                             while ($mng = $res->fetch_assoc()) {
-                                ?>
+                            ?>
                                 <tr>
+                                    <td><?php echo $i ?></td>
+                                    <td><?php echo $mng['name']; ?></td>
+                                    <td><?php echo $mng['email']; ?></td>
+                                    <td><?php echo $mng['mobile']; ?></td>
+                                    <td><?php echo $mng['position']; ?></td>
                                     <td>
-                                        <?php echo $i ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $mng['name']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $mng['email']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $mng['mobile']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $mng['position']; ?>
-                                    </td>
-                                    <td>
-                                        <a href="manager-detials.php?id=<?php echo $mng['id'] ?>"
-                                            class="btn btn-sm btn-outline-info m-1">Detials</a>
-                                        <a href="update.php?id=<?php echo $mng['id'] ?>"
-                                            class="btn btn-sm btn-outline-warning m-1">Update</a>
-                                        <a href="delete-detials.php?id=<?php echo $mng['id'] ?>"
-                                            class="btn btn-sm btn-outline-danger m-1">Remove</a>
+                                        <a href="manager-detials.php?id=<?php echo $mng['id'] ?>" class="btn btn-sm btn-outline-info m-1">Detials</a>
+                                        <a href="update.php?id=<?php echo $mng['id'] ?>" class="btn btn-sm btn-outline-warning m-1">Update</a>
+                                        <a href="delete-detials.php?id=<?php echo $mng['id'] ?>" class="btn btn-sm btn-outline-danger m-1">Remove</a>
                                     </td>
                                 </tr>
-                                <?php
-                                $i++;
+                            <?php
+                            $i++;
                             }
                             ?>
 
@@ -240,6 +226,10 @@
     </div>
     <?PHP
     // $conn->close();
+
+    ?>
+     <?php
+    include_once "footer.php";
     ?>
 </body>
 

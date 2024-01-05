@@ -7,7 +7,7 @@
     <title>Update Manager Detials</title>
 </head>
 
-<body>
+<body style="background-color: #ac84e35c;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
     <?php
     include_once 'OwnerNav.php';
     if (!isset($_GET['id'])) {
@@ -20,23 +20,68 @@
     $res = $conn->query($qry);
     $sid = $res->fetch_assoc();
     ?>
-    <div class="container border w-25 ">
-        <h1>UPDATE DETIALS</h1>
-        <form action="update-detials.php" method="post" class="my-3">
-            <input type="hidden" name="id" value="<?php echo $sid['id'] ?>">
-            <input type="text" name="name" placeholder="Full Name" value="<?php echo $sid['name']?>"><br>
-            <label for="gender" class="mt-3">Gender :</label>
-            <input type="radio" name="gender" value="Male" <?php $sid['gender'] === "Male" ? print "checked" : "" ?>>Male
-            <input type="radio" name="gender" value="Female" <?php $sid['gender'] === "Female" ? print "checked" : "" ?>>Female<br>
-            <label for="dob" class="mt-3">DOB </label>
-            <input type="date" name="dob" id="" value="<?php echo $sid['dob']?>">
-            <input type="email" name="email" placeholder="Email" value="<?php echo $sid['email']?>" class="mt-3"><br>
-            <input type="hidden" name="position" placeholder="Positin" value="manager" class="mt-3">
-            <input type="number" name="mobile" placeholder="Phone Number" class="mt-3" value="<?php echo $sid['mobile']?>"><br>
-            <textarea name="address" id="" cols="30" rows="5" class="mt-3" placeholder="Address" ><?php echo $sid['address'] ?></textarea>
-            <input type="password" name="password" placeholder="Set Password" class="mt-3" value="<?php echo $sid['password']?>"><br>
-            <input type="submit" value="ADD" name="updateManager" class="mt-3">
-        </form>
+    <div class="box d-flex align-items-center justify-content-center">
+        <div class="w-50 text-center ">
+            <?php
+            if (isset($msg)) {
+            ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <?php echo $msg; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php
+            }
+            ?>
+            <form action="update-detials.php" method="post" enctype="multipart/form-data" class="row rounded g-3 needs-validation" style="background-color:#c9b8ee; border: 1px solid #327a81;box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);">
+                <h1 class="text-center">ADD MANAGER</h1>
+                <input type="hidden" name="id" value="<?php echo $sid['id'] ?>">
+                <div class="col-md-5 position-relative">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" name="name" class="form-control" id="name" value="<?php echo $sid['name'] ?>" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" value="<?php echo $sid['email'] ?>" required>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <label for="dob" class="form-label">DOB</label>
+                    <div class="input-group">
+                        <input type="date" name="dob" id="" class="form-control" value="<?php echo $sid['dob'] ?>" required>
+                    </div>
+                </div>
+                <div class="col-md-5 position-relative">
+                    <label for="gender" class="form-label">Gender</label>
+                    <div>
+                        <input type="radio" style="width: 50px;" name="gender" value="Male" <?php $sid['gender'] === "Male" ? print "checked" : "" ?>>Male
+                        <input type="radio" style="width: 50px;" name="gender" value="Female" <?php $sid['gender'] === "Female" ? print "checked" : "" ?>>Female<br>
+                    </div>
+                </div>
+                <input type="hidden" name="position" class="form-control" value="manager" required>
+                <div class="col-md-5 position-relative">
+                    <label for="mobile" class="form-label">Phone Number</label>
+                    <input type="number" name="mobile" class="form-control" id="mobile" value="<?php echo $sid['mobile'] ?>" required>
+                </div>
+                <!-- <div class="col-md-4 position-relative">
+                    <label for="file" class="form-label">Passport Photo</label>
+                    <input type="file" class="form-control"  name="image" id="file" required>
+                </div> -->
+                <div class="col-md-3 position-relative">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" name="address" id="address" value="<?php echo $sid['address'] ?>" required>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <label for="password" class="form-label">Set Password</label>
+                    <input type="password" class="form-control" name="password" id="password" value="<?php echo $sid['password'] ?>" required>
+                </div>
+                <div class="col-12 mb-3">
+                    <button class="mybtn" style="color: white; padding: 7px;" type="submit" name="updateManager">Add Location</button>
+                </div>
+            </form>
+        </div>
+
     </div>
 </body>
 

@@ -10,69 +10,36 @@
         #bg {
             background: linear-gradient(135deg, #71b7e6, #9b59b6);
         }
-
-        div#navbarNav ul li a {
-            position: relative;
-            z-index: 1;
-            /* border-bottom: 1px solid; */
-        }
-
-        div#navbarNav ul li a:hover {
-            color: #71b7e6;
-        }
-
-        div#navbarNav ul li a:after {
-            display: block;
-            margin: auto;
-            width: 100%;
-            height: 3px;
-            content: '.';
-            color: transparent;
-            background: #d2b2ff;
-            visibility: none;
-            opacity: 0;
-            z-index: -1;
-            transition: 0.5s ease;
-        }
-
-        div#navbarNav ul li a:hover:after {
-            opacity: 1;
-        }
     </style>
-    <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body>
-    <!-- <?php
-    // if (isset($_SESSION['message'])) {
-    //     echo '<div class="alert alert-success">' . $_SESSION['message'] . '</div>';
-    //     unset($_SESSION['message']);
-    // }
-    ?> -->
+    <?php
+    if (isset($_SESSION['message'])) {
+        echo '<div class="alert alert-success">' . $_SESSION['message'] . '</div>';
+        unset($_SESSION['message']);
+    }
+    ?>
 
     <body class="text-white mt-0" id="bg" data-bs-spy="scroll" data-bs-target="#navScroll">
 
-        <nav class="navbar navbar-expand-lg navbarbg" data-bs-theme="dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Explorers HUB</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
+            <div class="container">
+                <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
+                    <span class="ms-md-1 mt-1 fw-bolder me-md-5">Explorers HUB</span>
+                </a>
 
                 <?php if (isset($_SESSION['loggedInStatus'])): ?>
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link text-white" href="index.php">Home</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="dashboard.php">Dashboard</a></li>
-                            <li><a class="nav-link text-white" href="logout.php">Logout</a></li>
-                        </ul>
-                    </div>
+                    <a href="index.php" class="btn btn-primary">Home Page</a>
+                    <a href="dashboard.php" class="btn btn-secondary">Dashboard</a>
+                    <a href="availlocation.php" class="btn btn-secondary">Check Availability</a>
+                    <a href="logout.php" class="btn btn-danger">Logout</a>
 
                 <?php else: ?>
 
-                    <a class="nav-link text-white fs-4" href="loginRegister.php">Login</a>
+                    <a href="loginRegister.php" class="btn btn-primary">Login</a>
+                    <a href="register.php" class="btn btn-info">Register</a>
+
                 <?php endif; ?>
             </div>
         </nav>

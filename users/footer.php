@@ -11,9 +11,9 @@
 </head>
 
 <body>
-  <div class="">
+  <div class="" style="margin-top: 25px;">
     <section class="">
-      <footer class="text-center text-white" style="background-color: #0a4275;">
+      <footer class="text-center text-white" style="background-color: #814ccb;">
         <div class="container p-4 pb-0">
           <section class="">
             <p class="d-flex justify-content-center align-items-center">
