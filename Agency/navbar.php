@@ -42,7 +42,10 @@
                         </ul>
                     </div>
 
+                    <a href="loginRegister.php" class="btn btn-primary">Login</a>
+                    <a href="register.php" class="btn btn-info">Register</a>
                 <?php else: ?>
+
 
                     <a class="nav-link text-white fs-4" href="loginRegister.php">Login</a>
                 <?php endif; ?>

@@ -170,13 +170,13 @@
                     <table cellspacing="0">
                     <div class="header">All Detials</div>
                         <tr>
-                            <th class="text-center">ID</th>
                             <th class="text-center">NAME</th>
                             <th class="text-center">GENDER</th>
                             <th class="text-center">DOB</th>
                             <th class="text-center">ADDRESS</th>
                             <th class="text-center">MOBILE</th>
                             <th class="text-center">EMAIL</th>
+                            <th class="text-center">PHOTO</th>
                             <th class="text-center">POSITION</th>
                         </tr>
                         <?php
@@ -188,9 +188,6 @@
 
                         ?>
                             <tr>
-                                <td>
-                                    <?php echo $mng['id'] ?>
-                                </td>
                                 <td>
                                     <?php echo $mng['name'] ?>
                                 </td>
@@ -208,6 +205,9 @@
                                 </td>
                                 <td>
                                     <?php echo $mng['email'] ?>
+                                </td>
+                                <td>
+                                    <img src="<?php echo $mng['img'] ?>" width="150px" alt="">
                                 </td>
                                 <td>
                                     <?php echo $mng['position'] ?>

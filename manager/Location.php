@@ -199,14 +199,14 @@
                             ?>
                             <div class="header">Location</div>
                             <tr>
-                                <th>LOCATION ID</th>
-                                <th>LOCATION NAME</th>
-                                <th>STREET</th>
-                                <th>DISTRICT</th>
-                                <th>PINCODE</th>
-                                <th>LOCATION PRICE</th>
-                                <th>LOCATION AVAILABLE</th>
-                                <th>MODIFICATION</th>
+                                <th class="text-center">LOCATION ID</th>
+                                <th class="text-center">LOCATION NAME</th>
+                                <th class="text-center">STREET</th>
+                                <th class="text-center">DISTRICT</th>
+                                <th class="text-center">PINCODE</th>
+                                <th class="text-center">LOCATION PRICE</th>
+                                <th class="text-center">LOCATION AVAILABLE</th>
+                                <th class="text-center">MODIFICATION</th>
                             </tr>
                             <?php
                             $i=1;
@@ -222,7 +222,7 @@
                                     <td><?php echo $loc['pincode']; ?></td>
                                     <td class="td-actions text-right">
                                         <a href="locationUpdate.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Update</a>
-                                        <a href="delete-detials.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-danger p-1">Remove</a>
+                                        <a href="delete-loc-detials.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-danger p-1">Remove</a>
                                     </td>
                                 </tr>
                             <?php
