@@ -20,7 +20,7 @@
 
     if ($conn->query($Insertqry)) {
         // $msg = " booking Add ";
-        header("location:booking.php?status=ok");
+        header("location:TravelPlan.php?status=ok");
     } else {
         echo $conn->error;
     }

@@ -7,7 +7,7 @@
     <title>Location Update</title>
 </head>
 
-<body class="bgcolor">
+<body style="background-color: #ac84e35c;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
     <?php
     include_once 'Navbar.php';
     if (!isset($_GET['id'])) {
@@ -22,7 +22,7 @@
     ?>
     <div class="box d-flex align-items-center justify-content-center">
         <div class="w-50 text-center">
-            <form class="row rounded g-3 needs-validation " action="update-location.php" method="post" novalidate>
+            <form class="row rounded g-3 needs-validation" action="update-location.php" method="post" style=" background-color:#c9b8ee; border: 1px solid #327a81;box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);" novalidate>
                 <h1 class="text-center">UPDATE LOCATION</h1>
                 <input type="hidden" name="id" value="<?php echo $sid['id'] ?>">
                 <div class="col-md-4 position-relative">
@@ -65,6 +65,13 @@
                 <div class="col-md-6 position-relative">
                     <label for="validationTooltip03" class="form-label">Price</label>
                     <input type="text" name="price" class="form-control" id="validationTooltip03" value="<?php echo $sid['price'] ?>" required>
+                    <div class="invalid-tooltip">
+                        Please provide a valid city.
+                    </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                    <label for="validationTooltip03" class="form-label">Location Image</label>
+                    <input type="file" name="image" class="form-control" id="validationTooltip03" value="<?php echo $sid['img'] ?>" required>
                     <div class="invalid-tooltip">
                         Please provide a valid city.
                     </div>

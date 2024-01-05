@@ -202,8 +202,8 @@
                                     <td><?php echo $loc['state']; ?></td>
                                     <td><?php echo $loc['price']; ?></td>
                                     <td>
-                                        <a href="locationUpdate.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Accept</a>
-                                        <a href="delete-detials.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-danger p-1">Cancel</a>
+                                        <a href="Agency-detials.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Update</a>
+                                        <a href="delete-Agency.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-danger p-1">Remove</a>
                                     </td>
                                 </tr>
                             <?php
@@ -223,87 +223,35 @@
                     <div class="table-users">
                         <table cellspacing="0">
                             <!-- <?php
-                                    $qry = "SELECT * FROM agency_application";
+                                    $qry = "SELECT * FROM location";
                                     $res = $conn->query($qry);
                                     ?> -->
-                            <div class="header">Request</div>
+                            <div class="header">LOCATION'S</div>
                             <tr>
-                                <th class="text-center">REQUEST ID</th>
-                                <th class="text-center">AGENCY NAME</th>
+                            <th class="text-center">LOCATION ID</th>
                                 <th class="text-center">LOCATION NAME</th>
                                 <th class="text-center">STREET</th>
                                 <th class="text-center">DISTRICT</th>
-                                <th class="text-center">STATE</th>
                                 <th class="text-center">PINCODE</th>
                                 <th class="text-center">LOCATION PRICE</th>
-                                <th class="text-center">ACTION</th>
+                                <th class="text-center">LOCATION AVAILABLE</th>
+                                <th class="text-center">MODIFICATION</th>
                             </tr>
                             <?php
                             $i = 1;
                             while ($loc = $res->fetch_assoc()) {
                             ?>
                                 <tr>
-                                    <td><?php echo $i ?></td>
-                                    <td><?php echo $loc['agencyName']; ?></td>
-                                    <td><?php echo $loc['location']; ?></td>
+                                <td><?php echo $i ?></td>
+                                    <td><?php echo $loc['name']; ?></td>
                                     <td><?php echo $loc['street']; ?></td>
                                     <td><?php echo $loc['district']; ?></td>
-                                    <td><?php echo $loc['state']; ?></td>
                                     <td><?php echo $loc['pincode']; ?></td>
                                     <td><?php echo $loc['price']; ?></td>
-                                    <td>
-                                        <a href="locationUpdate.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Accept</a>
-                                        <a href="delete-detials.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-danger p-1">Cancel</a>
-                                    </td>
-                                </tr>
-                            <?php
-                                $i++;
-                            }
-                            ?>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex main-container justify-content-center">
-        <div class="containers">
-            <div class="table-container">
-                <div class="mx-auto">
-                    <div class="table-users">
-                        <table cellspacing="0">
-                            <!-- <?php
-                                    $qry = "SELECT * FROM agency_application";
-                                    $res = $conn->query($qry);
-                                    ?> -->
-                            <div class="header">Request</div>
-                            <tr>
-                                <th class="text-center">REQUEST ID</th>
-                                <th class="text-center">AGENCY NAME</th>
-                                <th class="text-center">LOCATION NAME</th>
-                                <th class="text-center">STREET</th>
-                                <th class="text-center">DISTRICT</th>
-                                <th class="text-center">STATE</th>
-                                <th class="text-center">PINCODE</th>
-                                <th class="text-center">LOCATION PRICE</th>
-                                <th class="text-center">ACTION</th>
-                            </tr>
-                            <?php
-                            $i = 1;
-                            while ($loc = $res->fetch_assoc()) {
-                            ?>
-                                <tr>
-                                    <td><?php echo $i ?></td>
-                                    <td><?php echo $loc['agencyName']; ?></td>
-                                    <td><?php echo $loc['location']; ?></td>
-                                    <td><?php echo $loc['street']; ?></td>
-                                    <td><?php echo $loc['district']; ?></td>
-                                    <td><?php echo $loc['state']; ?></td>
                                     <td><?php echo $loc['pincode']; ?></td>
-                                    <td><?php echo $loc['price']; ?></td>
-                                    <td>
-                                        <a href="locationUpdate.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Accept</a>
-                                        <a href="delete-detials.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-danger p-1">Cancel</a>
+                                    <td class="td-actions text-right">
+                                        <a href="locationUpdate.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Update</a>
+                                        <a href="delete-loc-detials.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-danger p-1">Remove</a>
                                     </td>
                                 </tr>
                             <?php

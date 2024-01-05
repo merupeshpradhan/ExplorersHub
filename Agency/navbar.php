@@ -37,7 +37,7 @@
 
                 <?php else: ?>
 
-                    <a href="login.php" class="btn btn-primary">Login</a>
+                    <a href="loginRegister.php" class="btn btn-primary">Login</a>
                     <a href="register.php" class="btn btn-info">Register</a>
 
                 <?php endif; ?>
