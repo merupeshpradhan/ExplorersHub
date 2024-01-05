@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include('authentication.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAD</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
 
     <style>
         body {
@@ -20,28 +21,29 @@
         }
 
         .header {
-            background-color: #327a81;
+            background-color: #d2b2ff;
             color: white;
             font-size: 1.5em;
-            padding: 1rem;
+            /* padding: 1rem; */
             text-align: center;
             text-transform: uppercase;
         }
 
-        img {
-            border-radius: 50%;
-            height: 60px;
-            width: 60px;
+        .main-container {
+            min-height: 120vh;
+        }
+
+        .table-container {
+            margin-top: 25px;
         }
 
         .table-users {
             border: 1px solid #327a81;
             border-radius: 10px;
             box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-            max-width: calc(100% - 2em);
-            margin: 1em auto;
+            /* margin: 1em auto; */
             overflow: hidden;
-            width: 800px;
+            width: 95vw;
         }
 
         table {
@@ -62,11 +64,10 @@
         table td:last-child {
             font-size: 0.95em;
             line-height: 1.4;
-            text-align: left;
         }
 
         table th {
-            background-color: #daeff1;
+            background-color: #e9d1e7;
             font-weight: 700;
         }
 
@@ -75,10 +76,10 @@
         }
 
         table tr:nth-child(2n+1) {
-            background-color: #edf7f8;
+            background-color: #f1e8ff;
         }
 
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 620px) {
 
             table,
             tr,
@@ -86,19 +87,23 @@
                 display: block;
             }
 
+            .table-container {
+                margin-top: 25px;
+            }
+
             td:first-child {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                width: 100px;
+                width: 60px;
+
             }
 
             td:not(:first-child) {
                 clear: both;
-                margin-left: 100px;
-                padding: 4px 20px 4px 90px;
+                margin-left: 55px;
+                padding: 4px 20px 4px 115px;
                 position: relative;
-                text-align: left;
             }
 
             td:not(:first-child):before {
@@ -122,7 +127,16 @@
             }
 
             td:nth-child(5):before {
-                content: "Comments:";
+                content: "Position:";
+            }
+
+            td:nth-child(6):before {
+                content: "Action:";
+            }
+
+            table td:last-child {
+                line-height: 2.4;
+                text-align: center;
             }
 
             tr {
@@ -135,65 +149,11 @@
             }
         }
 
-        @media screen and (max-width: 500px) {
-            .header {
-                background-color: transparent;
-                color: white;
-                font-size: 2em;
-                font-weight: 700;
-                padding: 0;
-                text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        /* @media screen and (max-width: 620px) {
+            .table-container{
+                width: 20px;
             }
-
-            img {
-                border: 3px solid;
-                border-color: #daeff1;
-                height: 100px;
-                margin: 0.5rem 0;
-                width: 100px;
-            }
-
-            td:first-child {
-                background-color: #c8e7ea;
-                border-bottom: 1px solid #91ced4;
-                border-radius: 10px 10px 0 0;
-                position: relative;
-                top: 0;
-                transform: translateY(0);
-                width: 100%;
-            }
-
-            td:not(:first-child) {
-                margin: 0;
-                padding: 5px 1em;
-                width: 100%;
-            }
-
-            td:not(:first-child):before {
-                font-size: 0.8em;
-                padding-top: 0.3em;
-                position: relative;
-            }
-
-            td:last-child {
-                padding-bottom: 1rem !important;
-            }
-
-            tr {
-                background-color: white !important;
-                border: 1px solid #6cbec6;
-                border-radius: 10px;
-                box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-                margin: 0.5rem 0;
-                padding: 0;
-            }
-
-            .table-users {
-                border: none;
-                box-shadow: none;
-                overflow: visible;
-            }
-        }
+        } */
     </style>
 </head>
 
@@ -204,53 +164,56 @@
     $qry = "Select * from agency";
     $res = mysqli_query($conn, $qry);
     ?>
-    <div class="container">
-        <div class="title">
-            <h3>Customer Orders</h3>
-        </div>
-        <div class="table-users">
-            <div class="header">Users</div>
-            <table cellspacing="0">
-                <tr>
-                    <th class="text-center">User id</th>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th class="text-right">Price</th>
-                    <th class="text-right">Actions</th>
-                </tr>
-                <?php while ($row = $res->fetch_assoc()) {
-                ?>
-                    <tr>
-                        <td>
-                            <?php echo $row['id']; ?>
-                        </td>
-                        <!-- <td>
-                                        <?php echo $row['name']; ?>
-                                    </td> -->
-                        <td>
-                            <?php echo $row['loc']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row['avail']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row['price']; ?>
-                        </td>
-                        <td class="td-actions text-right">
-                            <button type="button" name="accept_order" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
-                                <i class="material-icons">check</i>
-                            </button>
-                            <button type="button" name="reject_order" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
-                                <i class="material-icons">close</i>
-                            </button>
-                        </td>
-                    </tr>
-                <?php
-                }
-                ?>
-            </table>
-        </div>
+    <div class="d-flex main-container justify-content-center">
+        <div class="containers">
+            <div class="table-container">
+                <div class="mx-auto">
+                    <div class="table-users">
+                        <table cellspacing="0">
+                            <div class="header">Users's Request</div>
+                            <tr>
+                                <th class="text-center">USER ID</th>
+                                <!-- <th class="text-center">NAME</th> -->
+                                <th class="text-center">LOCATION</th>
+                                <th class="text-center">AVAILABLE</th>
+                                <th class="text-center">PRICE</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            <?php
+                            while ($row = $res->fetch_assoc()) {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $row['id'] ?>
+                                    </td>
+                                    <!-- <td>
+                            <?php echo $row['name']; ?>
+                        </td> -->
+                                    <td>
+                                        <?php echo $row['loc']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['avail']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['price']; ?>
+                                    </td>
+                                    <td>
+                                        <a href="manager-detials.php?id=<?php echo $row['id'] ?>"
+                                            class="btn btn-sm btn-outline-info m-1">Accept</a>
+                                        <a href="delete-detials.php?id=<?php echo $row['id'] ?>"
+                                            class="btn btn-sm btn-outline-danger m-1">Reject</a>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
 
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
