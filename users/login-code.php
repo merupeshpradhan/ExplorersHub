@@ -25,7 +25,7 @@ if(isset($_POST['loginBtn']))
         exit();
     }
 
-    $userQuery = "SELECT * FROM agency_signup WHERE email='$email' AND password='$password'";
+    $userQuery = "SELECT * FROM users WHERE email='$email' AND password='$password'";
     $result = mysqli_query($conn, $userQuery);
 
     if($result){
@@ -34,7 +34,7 @@ if(isset($_POST['loginBtn']))
             $_SESSION['loggedInStatus'] = true;
             $_SESSION['message'] = "Logged In Successfully!";
             
-            header('Location: dashboard.php');
+            header('Location: user-home.php');
             exit();
             
         }else{

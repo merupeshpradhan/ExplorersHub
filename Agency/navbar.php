@@ -10,6 +10,34 @@
         #bg {
             background: linear-gradient(135deg, #71b7e6, #9b59b6);
         }
+
+        div#navbarNav ul li a {
+            position: relative;
+            z-index: 1;
+            /* border-bottom: 1px solid; */
+        }
+
+        div#navbarNav ul li a:hover {
+            color: #71b7e6;
+        }
+
+        div#navbarNav ul li a:after {
+            display: block;
+            margin: auto;
+            width: 100%;
+            height: 3px;
+            content: '.';
+            color: transparent;
+            background: #d2b2ff;
+            visibility: none;
+            opacity: 0;
+            z-index: -1;
+            transition: 0.5s ease;
+        }
+
+        div#navbarNav ul li a:hover:after {
+            opacity: 1;
+        }
     </style>
     <link rel="stylesheet" href="../style/style.css">
 </head>

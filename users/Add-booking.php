@@ -16,7 +16,7 @@
     // echo $agencyName;
     // echo $price;
 
-    $Insertqry = "INSERT INTO booking_confirmation (location,price) VALUES('$location','$price')";
+    $Insertqry = "INSERT INTO booking_list (location,price) VALUES('$location','$price')";
 
     if ($conn->query($Insertqry)) {
         // $msg = " booking Add ";

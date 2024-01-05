@@ -37,9 +37,12 @@
                 <div class="col mx-auto">
                     <?php
                     require_once "db-connect.php";
-                    $location = "SELECT * FROM booking_confirmation";
+                    $location = "SELECT bl.bookingId, bl.location, bl.agencyName, bl.agencyPhn, bl.price, bcd.action
+                    FROM booking_list bl
+                    INNER JOIN booking_confirmation_details bcd ON bl.bookingId = bcd.bookingId";
+                    ;
                     $res1 = $conn->query($location);
-
+                    
                     while ($loc = $res1->fetch_assoc()) {
                     ?>
                         <div class="mb-3 col-lg-7 card fw-bold" style="max-width: 550px; border: 2px solid #5a5add; background-color: #8aafd6; font-family: 'Courier New', Courier, monospace;">
@@ -51,6 +54,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $loc['location']; ?></h5>
                                         <p class="card-text">Price : <?php echo $loc['price']; ?> </p>
+                                        <p class="card-text"><?php echo ($loc['action'] === "accept"? "Accepted" : "Cancelled"); ?> </p>
                                         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>

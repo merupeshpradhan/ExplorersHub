@@ -20,6 +20,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item "><a class="nav-link text-white" id="nav" href="user-home.php">Home</a></li>
                     <li class="nav-item "><a class="nav-link text-white" id="nav" href="booking.php">Booking</a></li>
+                    <li class="nav-item "><a class="nav-link text-white" id="nav" href="logout.php">Log Out</a></li>
                     <!-- <li class="nav-item"><a class="nav-link text-white" href="CustemerReq.php">Custemer Request</a></li> -->
                     <!-- <li class="nav-item"><a class="nav-link text-white" href="Location.php">Location's</a></li> -->
                     <!-- <li class="nav-item"><a class="nav-link text-white" href="Charges.php">Charges</a></li> -->

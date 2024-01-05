@@ -161,7 +161,7 @@
     <?php include_once("navbar.php"); ?>
     <?php
     include_once("dbcon.php");
-    $qry = "Select * from agency";
+    $qry = "Select * from booking_list";
     $res = mysqli_query($conn, $qry);
     ?>
     <div class="d-flex main-container justify-content-center">
@@ -170,12 +170,13 @@
                 <div class="mx-auto">
                     <div class="table-users">
                         <table cellspacing="0">
-                            <div class="header">Users's Request</div>
+                            <div class="header">User's Request</div>
                             <tr>
-                                <th class="text-center">USER ID</th>
+                                <th class="text-center">BOOKING ID</th>
                                 <!-- <th class="text-center">NAME</th> -->
                                 <th class="text-center">LOCATION</th>
-                                <th class="text-center">AVAILABLE</th>
+                                <th class="text-center">AGENCY NAME</th>
+                                <th class="text-center">AGENCY PHONE NO.</th>
                                 <th class="text-center">PRICE</th>
                                 <th class="text-center">Action</th>
                             </tr>
@@ -184,24 +185,28 @@
                                 ?>
                                 <tr>
                                     <td>
-                                        <?php echo $row['id'] ?>
+                                        <?php echo $row['bookingId'] ?>
                                     </td>
                                     <!-- <td>
                             <?php echo $row['name']; ?>
                         </td> -->
                                     <td>
-                                        <?php echo $row['loc']; ?>
+                                        <?php echo $row['location']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $row['avail']; ?>
+                                        <?php echo $row['agencyName']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['agencyPhn']; ?>
                                     </td>
                                     <td>
                                         <?php echo $row['price']; ?>
                                     </td>
                                     <td>
-                                        <a href="manager-detials.php?id=<?php echo $row['id'] ?>"
+                                        <a href="booking_confirmation_detials.php?action=accept&id=<?php echo $row['bookingId'] ?>"
                                             class="btn btn-sm btn-outline-info m-1">Accept</a>
-                                        <a href="delete-detials.php?id=<?php echo $row['id'] ?>"
+
+                                        <a href="booking_confirmation_detials.php?action=reject&id=<?php echo $row['bookingId'] ?>"
                                             class="btn btn-sm btn-outline-danger m-1">Reject</a>
                                     </td>
                                 </tr>
