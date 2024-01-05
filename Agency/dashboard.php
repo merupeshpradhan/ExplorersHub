@@ -203,7 +203,7 @@ $res = mysqli_query($conn, $qry);
                                     </td>
                                     <td>
                                         <a href="update.php?id=<?php echo $row['id'] ?>"
-                                            class="btn btn-sm btn-outline-info m-1">UPDATE</a>
+                                            class="btn btn-l btn-outline-info m-1">UPDATE</a>
                                     </td>
                                 </tr>
                                 <?php

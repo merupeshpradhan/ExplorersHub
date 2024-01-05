@@ -11,10 +11,7 @@
     <?php
     include_once "Navbar.php";
     if (isset($_POST['add'])) {
-        $agencyName     = $_POST['agencyName'];
-        $OwnerName     = $_POST['ownerName'];
-        $email     = $_POST['email'];
-        $phone     = $_POST['phone'];
+        $agencyName	 = $_POST['agencyName'];
         $location = $_POST['location'];
         $street = $_POST['street'];
         $district = $_POST['district'];
@@ -23,7 +20,7 @@
         $price = $_POST['price'];
         require_once "db-connect.php";
 
-        $qry = "INSERT INTO agency_application (agencyName,ownerName,email,phone,location,street,district,state,pincode,price) VALUES(' $agencyName','$OwnerName','$email','$phone','$location','$street','$district','$state','$pincode','$price')";
+        $qry = "INSERT INTO agency_application (agencyName,location,street,district,state,pincode,price) VALUES(' $agencyName','$location','$street','$district','$state','$pincode','$price')";
 
         if ($conn->query($qry)) {
             $msg = " Location Added Succsefully ";
@@ -47,32 +44,11 @@
             <?php
             }
             ?>
-            <form class="row rounded g-3 needs-validation bg-warning" style="padding: 20px; margin-top:20px;margin-bottom: 20px;" action="Agency-register.php" method="post" novalidate>
+            <form class="row rounded g-3 needs-validation " action="Agency-register.php" method="post" novalidate>
                 <h4 class="text-center">New Agency Application form</h4>
                 <div class="col-md-4 position-relative">
                     <label for="validationTooltip01" class="form-label">Agency name</label>
                     <input type="text" class="form-control" id="validationTooltip01" name="agencyName" required>
-                    <div class="valid-tooltip">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="col-md-4 position-relative">
-                    <label for="validationTooltip01" class="form-label">Owner Name</label>
-                    <input type="text" class="form-control" id="validationTooltip01" name="ownerName" required>
-                    <div class="valid-tooltip">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="col-md-4 position-relative">
-                    <label for="validationTooltip01" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="validationTooltip01" name="email" required>
-                    <div class="valid-tooltip">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="col-md-4 position-relative">
-                    <label for="validationTooltip01" class="form-label">Phone Number</label>
-                    <input type="text" class="form-control" id="validationTooltip01" name="phone" required>
                     <div class="valid-tooltip">
                         Looks good!
                     </div>
@@ -122,7 +98,7 @@
                     </div>
                 </div>
                 <div class="col-12 mb-3">
-                    <button class="mybtn" style="color: white; padding: 7px;" type="submit" name="add">Send Request</button>
+                    <button class="mybtn" style="color: white; padding: 7px;" type="submit" name="add">Add Location</button>
                 </div>
             </form>
         </div>

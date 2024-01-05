@@ -18,6 +18,7 @@
             background-color: #d2b2ff;
             color: white;
             font-size: 1.5em;
+            /* padding: 1rem; */
             text-align: center;
             text-transform: uppercase;
         }
@@ -150,7 +151,7 @@
     </style>
 </head>
 
-<body style="background-color: #ac84e35c;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+<body>
     <?php
     include_once "OwnerNav.php";
     ?>
@@ -239,10 +240,6 @@
     </div>
     <?PHP
     // $conn->close();
-
-    ?>
-     <?php
-    include_once "footer.php";
     ?>
 </body>
 
