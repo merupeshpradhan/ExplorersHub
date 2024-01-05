@@ -112,38 +112,32 @@
             td:nth-child(2):before {
                 content: "Agency Name:";
             }
-            td:nth-child(3):before {
-                content: "Owner Name:";
-            }
-            td:nth-child(4):before {
-                content: "Phone:";
-            }
-            td:nth-child(5):before {
-                content: "Email:";
-            }
 
-            td:nth-child(6):before {
+            td:nth-child(3):before {
                 content: "Location :";
             }
 
-            td:nth-child(7):before {
+            td:nth-child(4):before {
                 content: "Street:";
             }
 
-            td:nth-child(8):before {
+            td:nth-child(5):before {
                 content: "District:";
             }
 
-            td:nth-child(9):before {
+            td:nth-child(6):before {
                 content: "State:";
             }
-            td:nth-child(10):before {
+
+            td:nth-child(7):before {
                 content: "Pincode:";
             }
-            td:nth-child(11):before {
+
+            td:nth-child(8):before {
                 content: "LOC Price:";
             }
-            td:nth-child(12):before {
+
+            td:nth-child(9):before {
                 content: "Action:";
             }
 
@@ -170,7 +164,7 @@
     </style>
 </head>
 
-<body style="background-color: #ac84e35c;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+<body>
     <?php
     include_once "Navbar.php";
     ?>
@@ -181,17 +175,14 @@
                     <div class="table-users">
                         <table cellspacing="0">
                             <!-- <?php
-                                    require_once "db-connect.php";
-                                    $qry = "SELECT * FROM agency_application";
-                                    $res = $conn->query($qry);
-                                    ?> -->
+                            require_once "db-connect.php";
+                            $qry = "SELECT * FROM agency_application";
+                            $res = $conn->query($qry);
+                            ?> -->
                             <div class="header">Request</div>
                             <tr>
                                 <th class="text-center">REQUEST NO.</th>
                                 <th class="text-center">AGENCY NAME</th>
-                                <th class="text-center">OWNER NAME</th>
-                                <th class="text-center">PHONE</th>
-                                <th class="text-center">EMAIL</th>
                                 <th class="text-center">LOCATION NAME</th>
                                 <th class="text-center">STREET</th>
                                 <th class="text-center">DISTRICT</th>
@@ -203,25 +194,40 @@
                             <?php
                             $i = 1;
                             while ($loc = $res->fetch_assoc()) {
-                            ?>
+                                ?>
                                 <tr>
-                                    <td><?php echo $i ?></td>
-                                    <td><?php echo $loc['agencyName']; ?></td>
-                                    <td><?php echo $loc['ownerName']; ?></td>
-                                    <td><?php echo $loc['phone']; ?></td>
-                                    <td><?php echo $loc['email']; ?></td>
-                                    <td><?php echo $loc['location']; ?></td>
-                                    <td><?php echo $loc['street']; ?></td>
-                                    <td><?php echo $loc['district']; ?></td>
-                                    <td><?php echo $loc['state']; ?></td>
-                                    <td><?php echo $loc['pincode']; ?></td>
-                                    <td><?php echo $loc['price']; ?></td>
                                     <td>
-                                        <a href="add-to-agencyList.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-success p-1">Accept</a>
-                                        <a href="delet-request-agency.php?id=<?php echo $loc['id'] ?>" class="btn btn-sm btn-outline-danger p-1">Cancel</a>
+                                        <?php echo $i ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $loc['agencyName']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $loc['location']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $loc['street']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $loc['district']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $loc['state']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $loc['pincode']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $loc['price']; ?>
+                                    </td>
+                                    <td>
+                                        <a href="locationUpdate.php?id=<?php echo $loc['id'] ?>"
+                                            class="btn btn-sm btn-outline-success p-1">Accept</a>
+                                        <a href="delete-detials.php?id=<?php echo $loc['id'] ?>"
+                                            class="btn btn-sm btn-outline-danger p-1">Cancel</a>
                                     </td>
                                 </tr>
-                            <?php
+                                <?php
                                 $i++;
                             }
                             ?>

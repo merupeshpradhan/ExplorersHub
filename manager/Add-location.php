@@ -7,7 +7,7 @@
     <title>Add Location</title>
 </head>
 
-<body style="background-color: #ac84e35c;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+<body>
     <?php
     include_once "Navbar.php";
     if (isset($_POST['add'])) {
@@ -17,16 +17,9 @@
         $state = $_POST['state'];
         $pincode = $_POST['pincode'];
         $price = $_POST['price'];
-        $img = $_FILES['image'];
-        $filename = $_FILES["image"]["name"];
-        $tempname = $_FILES["image"]["tmp_name"];
-        $folder = "Uploaded_Images/";
-        $full_path=$folder.basename($filename);
-
-        move_uploaded_file($tempname, $full_path);
         require_once "db-connect.php";
 
-        $qry = "INSERT INTO location (name,street,district,state,pincode,price,img) VALUES('$name','$street','$district','$state','$pincode','$price','$full_path')";
+        $qry = "INSERT INTO location (name,street,district,state,pincode,price) VALUES('$name','$street','$district','$state','$pincode','$price')";
 
         if ($conn->query($qry)) {
             $msg = " Location Added Succsefully ";
@@ -50,10 +43,10 @@
             <?php
             }
             ?>
-            <form class="row rounded g-3 needs-validation " action="Add-location.php" method="post" enctype="multipart/form-data" novalidate style="background-color:#c9b8ee; border: 1px solid #327a81;box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);">
+            <form class="row rounded g-3 needs-validation " action="Add-location.php" method="post" novalidate>
                 <h1 class="text-center">LOCATION DETIALS</h1>
-                <input type="hidden" name="id"> <div class="col-md-4 position-relative">
-               
+                <input type="hidden" name="id">
+                <div class="col-md-4 position-relative">
                     <label for="validationTooltip01" class="form-label">Location name</label>
                     <input type="text" class="form-control" id="validationTooltip01" name="name" required>
                     <div class="valid-tooltip">
@@ -93,13 +86,6 @@
                 <div class="col-md-6 position-relative">
                     <label for="validationTooltip03" class="form-label">Price</label>
                     <input type="text" name="price" class="form-control" id="validationTooltip03" required>
-                    <div class="invalid-tooltip">
-                        Please provide a valid city.
-                    </div>
-                </div>
-                <div class="col-md-6 position-relative">
-                    <label for="validationTooltip03" class="form-label">Location Image</label>
-                    <input type="file" name="image" class="form-control" id="validationTooltip03" required>
                     <div class="invalid-tooltip">
                         Please provide a valid city.
                     </div>
